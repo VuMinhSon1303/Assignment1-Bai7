@@ -1,59 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untitled Document</title>
+    <title>Thêm thể loại</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-	<?php if (isset($_GET['added']) && $_GET['added'] === '1') { ?>
-	<p>Them the loai thanh cong.</p>
-	<?php } ?>
-    <form action="theloai_them_xl.php" method="post" enctype="multipart/form-data" name="form1">
-	<table align="left"  width="400">
-	<tr>
-	<td align="right">
-	Ten The Loai
-</td>
-<td>
-	<input type="text" name="TenTL" value="" />
-</td>
-</tr>
-<tr>
-	<td align="right">
-	Thu Tu
-</td>
-<td>
-	<input type="text" name="ThuTu" value="" />
-</td>
-</tr>
-<tr>
-	<td align="right">
-	An Hien
-</td>
-<td>
-	<select name="AnHien">
-	<option value="0">An</option>
-	<option value="1">Hien</option>
-	</select>
-</td>
-</tr>
-<tr>
-  <td align="right">icon</td>
-  <td>
-    <input type="file" name="image" id="anh" />
-    
-    </td>
-</tr>
-<tr>
-	<td align="right">
-		<input type="submit" name="Them" value="Them" />
-</td>
-<td>
-	<input type="reset" name="Huy" value="Huy" />
-</td>
-</tr>
-</table>
+
+<h1>THÊM THỂ LOẠI</h1>
+
+<form action="theloai_them_xl.php"
+      method="post"
+      enctype="multipart/form-data">
+
+    <p>
+        <label>
+            Tên thể loại:
+            <input type="text"
+                   name="TenTL"
+                   required
+                   maxlength="255">
+        </label>
+    </p>
+
+    <p>
+        <label>
+            Thứ tự:
+            <input type="number"
+                   name="ThuTu"
+                   value="0"
+                   required>
+        </label>
+    </p>
+
+    <p>
+        <label>
+            Ẩn / Hiện:
+
+            <select name="AnHien">
+                <option value="0">Ẩn</option>
+                <option value="1" selected>Hiện</option>
+            </select>
+        </label>
+    </p>
+
+    <p>
+        <label>
+            Biểu tượng:
+            <input type="file"
+                   name="image"
+                   accept=".jpg,.jpeg,.png,.gif,.webp">
+        </label>
+    </p>
+
+    <button type="submit" name="Them" value="1">
+        Thêm
+    </button>
+
+    <button type="reset">
+        Hủy nhập
+    </button>
+
 </form>
+
+<p>
+    <a href="theloai.php">Quay về danh sách</a>
+</p>
+
 </body>
 </html>
