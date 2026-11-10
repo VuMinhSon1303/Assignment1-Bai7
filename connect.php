@@ -2,7 +2,7 @@
 
 // Ket noi co so du lieu MySQL
 $connect = mysqli_connect(
-    'localhost',
+    'localhost:8080',
     'root',
     '',
     'tintuc'
